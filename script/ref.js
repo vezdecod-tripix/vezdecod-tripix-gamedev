@@ -10,13 +10,13 @@ export default class Ref {
     this.save = save
   }
 
-  set value (newValue) {
+  setValue (newValue) {
+    console.log('set value', this.value, newValue)
     if (this.value !== newValue) {
       this.value = newValue
       for (const element of this.elements) {
         element.innerHTML = this.value
       }
-      this.elements.innerHTML = this.value
       if (this.save) {
         localStorage.setItem(this.save, this.value)
       }
